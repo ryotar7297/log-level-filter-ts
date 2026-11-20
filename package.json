@@ -1,6 +1,6 @@
 {
   "name": "log-level-filter-ts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Per-namespace log level thresholds that are adjustable at runtime.",
   "type": "module",
   "main": "src/index.js",
