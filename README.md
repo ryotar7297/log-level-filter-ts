@@ -37,3 +37,10 @@ Namespace matching is purely textual on dots. A threshold set on `app` does **no
 - `filter.pick(namespace, level)` — returns `level` when allowed, `undefined` otherwise.
 
 The root namespace is the empty string `""`. A message is allowed when its rank is greater than or equal to the effective threshold, so setting a threshold to `"warn"` still emits warnings themselves.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
